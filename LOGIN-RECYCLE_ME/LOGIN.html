@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tela de Login</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7ec, #ffffff);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 900px;
+            height: 520px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: flex;
+        }
+
+
+        .forms {
+            display: flex;
+            width: 200%;
+            z-index: 1;
+        }
+
+        .form-box {
+            width: 50%;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+        }
+
+        .form-box h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-box input {
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .form-box input:focus {
+            border-color: #4db869;
+            outline: none;
+        }
+
+        .form-box .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .form-box button {
+            padding: 14px;
+            background-color: #4db869;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-box button:hover {
+            background-color: #3ca05a;
+        }
+
+        .form-box p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .form-box p span {
+            color: #4db869;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: #4db869;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            /* SOBRE os forms */
+            border-radius: 0 25px 25px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.8s ease;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+            /* dá aquele efeito de "flutuar" */
+        }
+
+        .overlay h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .overlay button {
+            padding: 12px 28px;
+            background: white;
+            color: #4db869;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .overlay button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .container.move .overlay {
+            transform: translateX(100%);
+            border-radius: 25px 0 0 25px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+
+        <!-- Formulários -->
+        <div class="forms">
+            <!-- Login -->
+            <div class="form-box">
+                <h2>Seja bem-vindo(a)!</h2>
+                <input type="email" placeholder="Digite seu e-mail" />
+                <input type="password" placeholder="Digite sua senha" />
+                <div class="options">
+                    <label><input type="checkbox" /> Lembrar</label>
+                    <a href="#">Esqueci a senha</a>
+                </div>
+                <button>Entrar</button>
+                <p>Não tem conta? <span onclick="mudarParaCadastro()">Cadastre-se</span></p>
+            </div>
+
+            <!-- Cadastro -->
+            <div class="form-box">
+                <h2>Crie sua conta!</h2>
+                <input type="text" placeholder="Nome completo" />
+                <input type="email" placeholder="Digite seu e-mail" />
+                <input type="password" placeholder="Crie uma senha" />
+                <button>Cadastrar</button>
+                <p>Já tem conta? <span onclick="mudarParaLogin()">Login</span></p>
+            </div>
+        </div>
+
+        <!-- Painel Verde -->
+        <div class="overlay" id="overlay">
+            <h2 id="textoPainel">Seja bem-vindo!</h2>
+            <button onclick="mudarParaLogin()" id="botaoOverlay">Entrar</button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById("container");
+        const textoPainel = document.getElementById("textoPainel");
+        const botaoOverlay = document.getElementById("botaoOverlay");
+
+        function mudarParaLogin() {
+            container.classList.add("move");
+            textoPainel.innerText = "Seja bem-vindo de volta!";
+            botaoOverlay.innerText = "Cadastrar";
+            botaoOverlay.setAttribute("onclick", "mudarParaCadastro()");
+        }
+
+        function mudarParaCadastro() {
+            container.classList.remove("move");
+            textoPainel.innerText = "Seja bem-vindo!";
+            botaoOverlay.innerText = "Entrar";
+            botaoOverlay.setAttribute("onclick", "mudarParaLogin()");
+        }
+    </script>
+
+</body>
+
+</html>
