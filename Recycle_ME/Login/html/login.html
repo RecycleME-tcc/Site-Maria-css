@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+
+        <!-- Formulários -->
+        <div class="forms">
+            <!-- Login -->
+            <div class="form-box">
+                <h2>Seja bem-vindo(a)!</h2>
+                <input type="email" placeholder="Digite seu e-mail" />
+                <input type="password" placeholder="Digite sua senha" />
+                <div class="options">
+                    <label><input type="checkbox" /> Lembrar</label>
+                    <a href="#">Esqueci a senha</a>
+                </div>
+                <button>Entrar</button>
+                <p>Não tem conta? <span onclick="mudarParaCadastro()">Cadastre-se</span></p>
+            </div>
+
+            <!-- Cadastro -->
+            <div class="form-box">
+                <h2>Crie sua conta!</h2>
+                <input type="text" placeholder="Nome completo" />
+                <input type="email" placeholder="Digite seu e-mail" />
+                <input type="password" placeholder="Crie uma senha" />
+                
+                <div class="options">
+                    <br>
+                    <a href="">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/google-logo--v1.png" alt="Logo da Google"/> <br>
+                    </a>
+                    <a href="">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/facebook-new.png" alt="Logo do Facebook"/> <br>
+                    </a>
+                    <a href="">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/mac-os.png" alt="Logo da Apple"/>
+
+                    </a>
+                    <br>
+                </div>
+
+                <button>Cadastrar</button>
+                <p>Já tem conta? <span onclick="mudarParaLogin()">Login</span></p>
+            </div>
+        </div>
+
+        <!-- Painel Verde -->
+        <div class="overlay" id="overlay">
+            <h2 id="textoPainel">Seja bem-vindo!</h2>
+            <button onclick="mudarParaLogin()" id="botaoOverlay">Entrar</button>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #F3EEE8;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            align-items: center;
+        }
+
+        header .font-extrabold {
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            color: black;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        nav a.home {
+            background-color: #B0F2A1;
+            color: black;
+            text-decoration: none;
+
+        }
+
+        nav a.active {
+            background-color: black;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        nav a:not(.active):not(.home) {
+            background-color: black;
+            color: white;
+        }
+
+        .fa-user-circle {
+            font-size: 1.25rem;
+            color: black;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+            padding: 0 1.5rem;
+        }
+
+        .carrousel {
+            background-color: #B0F2A1;
+            border: 1px solid black;
+            border-radius: 1.25rem;
+            width: 1000px;
+            max-width: 1500px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carrousel h2 {
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 23px;
+            letter-spacing: 0.02em;
+            color: black;
+        }
+        
+   
